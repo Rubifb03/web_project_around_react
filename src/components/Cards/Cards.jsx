@@ -7,7 +7,7 @@ export default function Card(props) {
 
   useEffect(() => {
     console.log(card);
-  }, [])
+  }, []);
 
   const imageComponent = {
     title: card.name,
