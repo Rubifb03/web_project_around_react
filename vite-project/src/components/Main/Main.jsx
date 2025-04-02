@@ -1,12 +1,12 @@
 import Avatar from "../../../images/Avatar.jpg";
-import EditButton from "../../../images/Edit Button.png";
+import pincelButton from "../../../images/Lapiz Editar.png";
 import { useState } from "react";
 import NewCard from "./Popup/NewCard/NewCard.jsx";
 import EditAvatar from "./Popup/EditAvatar/EditAvatar.jsx";
 import EditProfile from "./Popup/EditProfile/EditProfile.jsx";
 import Popup from "./Popup/Popup.jsx";
 import Card from "../../components/Cards/Cards.jsx";
-import ImagePopup from "../ImagePopup/ImagePopup.jsx";
+import ImagePopup from "./Popup/ImagePopup/ImagePopup.jsx";
 
 const cards = [
   {
@@ -68,7 +68,7 @@ function Main() {
               onClick={() => handleOpenPopup(editAvatarPopup)}
             >
               <img
-                src={EditButton}
+                src={pincelButton}
                 alt="Editar foto"
                 className="profile__avatar-edit"
               />
