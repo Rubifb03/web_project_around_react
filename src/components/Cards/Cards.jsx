@@ -1,13 +1,13 @@
 import deleteButton from "../../../images/Trash.png";
-import React, { useEffect } from "react";
+// import React, { useEffect } from "react";
 // import ImagePopup from "../ImagePopup/ImagePopup";
 
 export default function Card(props) {
   const { handleOpenPopup, card } = props;
 
-  useEffect(() => {
-    console.log(card);
-  }, []);
+  // useEffect(() => {
+  //   console.log(card);
+  // }, []);
 
   const imageComponent = {
     title: card.name,

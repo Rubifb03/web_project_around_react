@@ -27,7 +27,7 @@ const cards = [
   },
 ];
 
-console.log(cards);
+// console.log(cards);
 
 function Main() {
   const [popup, setPopup] = useState(null);
@@ -112,8 +112,8 @@ function Main() {
         </Popup>
       )}
 
-      <section class="elements">
-        <div class="elements__grid">
+      <section className="elements">
+        <div className="elements__grid">
           {cards.map((cardElm) => (
             <Card
               key={cardElm._id}
