@@ -1,13 +1,8 @@
 import deleteButton from "../../../images/Trash.png";
-// import React, { useEffect } from "react";
-// import ImagePopup from "../ImagePopup/ImagePopup";
+import React from "react";
 
 export default function Card(props) {
-  const { handleOpenPopup, card } = props;
-
-  // useEffect(() => {
-  //   console.log(card);
-  // }, []);
+  const { handleOpenPopup, card, isLiked, onCardLike, onCardDelete } = props;
 
   const imageComponent = {
     title: card.name,
@@ -17,6 +12,18 @@ export default function Card(props) {
     },
   };
 
+  const cardLikeButtonClassName = `button__like ${
+    isLiked ? "button__like_active" : ""
+  }`;
+
+  function handleLikeClick() {
+    onCardLike(card);
+  }
+
+  function handleCardDelete() {
+    onCardDelete(card);
+  }
+
   return (
     <div className="elements__group">
       <div className="elements__card">
@@ -24,6 +31,7 @@ export default function Card(props) {
           className="elements__button-delete"
           type="button"
           aria-label="Delete card"
+          onClick={handleCardDelete}
         >
           <img
             className="button__delete"
@@ -41,9 +49,10 @@ export default function Card(props) {
       <div className="elements__footer">
         <p className="elements__footer-name">{card.name}</p>
         <button
-          className="button__like"
+          className={cardLikeButtonClassName}
           aria-label="Like card"
           type="button"
+          onClick={handleLikeClick}
         ></button>
       </div>
     </div>
