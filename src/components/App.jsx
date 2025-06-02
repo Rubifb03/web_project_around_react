@@ -49,16 +49,15 @@ export default function App() {
   }
 
   async function handleAddPlaceSubmit(newCardData) {
-    const newCard = await api
-      .createCard(newCardData)
-      .then(() => {
-        setCards((preCards) => [newCard, ...preCards]);
-        setPopup;
-      })
-      .catch((error) => {
-        console.error("Error al crear la tarjeta:", error);
-      });
+    try {
+      const newCard = await api.createCard(newCardData);
+      setCards((prevCards) => [newCard, ...prevCards]);
+      setPopup();
+    } catch (error) {
+      console.error("Error al crear la tarjeta:", error)
+    }
   }
+  
 
   function handleOpenPopup(popup) {
     setPopup(popup);

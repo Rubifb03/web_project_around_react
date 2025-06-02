@@ -102,16 +102,16 @@ function Main(props) {
 
       <section className="elements">
         <div className="elements__grid">
-          {cards.map((cardElm) => (
-            <Card
-              key={cardElm._id}
-              card={cardElm}
-              handleOpenPopup={onOpenPopup}
-              onCardLike={onCardLike}
-              isLiked={cardElm.isLiked}
-              onCardDelete={onCardDelete}
-            />
-          ))}
+          {cards.map((cardElm) => {
+            return <Card
+                key={cardElm._id}
+                card={cardElm}
+                handleOpenPopup={onOpenPopup}
+                onCardLike={onCardLike}
+                isLiked={cardElm?.isLiked}
+                onCardDelete={onCardDelete}
+              />
+          })}
         </div>
       </section>
     </main>
