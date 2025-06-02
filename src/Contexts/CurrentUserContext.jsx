@@ -12,7 +12,6 @@ function useCurrentUserContext() {
   }
   return context;
 }
-
 const CurrentUserProvider = (props) => {
   const { children } = props;
   const [currentUser, setCurrentUser] = useState({});

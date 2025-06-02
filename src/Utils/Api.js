@@ -21,6 +21,7 @@ class Api {
       },
     }).then((res) => res.json());
   }
+  
 
   updateUserProfile(body) {
     return fetch(`${this._baseUrl}/users/me`, {
