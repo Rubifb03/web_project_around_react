@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useCurrentUserContext } from "../../../../Contexts/CurrentUserContext";
+import { useCurrentUserContext } from "../../../../contexts/CurrentUserContext";
 
 export default function EditProfile(props) {
   const { onClose } = props;

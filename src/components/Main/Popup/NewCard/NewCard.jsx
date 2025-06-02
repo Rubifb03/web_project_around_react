@@ -1,5 +1,5 @@
 import { useState } from "react";
-import api from "../../../../Utils/api";
+import api from "../../../../utils/api";
 
 export default function NewCard({ onAddPlaceSubmit }) {
   const [title, setTitle] = useState("");

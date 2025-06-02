@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import Header from "../components/Header/Header.jsx";
 import Footer from "./Footer/Footer.jsx";
 import Main from "./Main/Main.jsx";
-import { useCurrentUserContext } from "../Contexts/CurrentUserContext.jsx";
-import api from "../Utils/api.js";
+import { useCurrentUserContext } from "../contexts/CurrentUserContext.jsx";
+import api from "../utils/api.js";
 
 export default function App() {
   const [popup, setPopup] = useState(null);
