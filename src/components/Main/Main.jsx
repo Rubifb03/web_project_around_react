@@ -6,7 +6,7 @@ import EditProfile from "./Popup/EditProfile/EditProfile.jsx";
 import Popup from "./Popup/Popup.jsx";
 import Card from "../../components/Cards/Cards.jsx";
 import ImagePopup from "./Popup/ImagePopup/ImagePopup.jsx";
-import { useCurrentUserContext } from "../../contexts/CurrentUserContext.jsx";
+import { useCurrentUserContext } from "../../contexts/CurrentUserContext";
 
 function Main(props) {
   const {
@@ -103,7 +103,8 @@ function Main(props) {
       <section className="elements">
         <div className="elements__grid">
           {cards.map((cardElm) => {
-            return <Card
+            return (
+              <Card
                 key={cardElm._id}
                 card={cardElm}
                 handleOpenPopup={onOpenPopup}
@@ -111,6 +112,7 @@ function Main(props) {
                 isLiked={cardElm?.isLiked}
                 onCardDelete={onCardDelete}
               />
+            );
           })}
         </div>
       </section>
