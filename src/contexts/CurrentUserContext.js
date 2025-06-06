@@ -1,5 +1,6 @@
 import { createContext, useContext, useState } from "react";
 import api from "../utils/api";
+import React from "react";
 
 const CurrentUserContext = createContext();
 
@@ -66,19 +67,16 @@ const CurrentUserProvider = (props) => {
     });
   };
 
-  return (
-    <CurrentUserContext.Provider
-      value={{
-        isLoadingUser,
-        currentUser,
-        handleGetUser,
-        handleUpdateUser,
-        handleUpdateAvatar,
-      }}
-    >
-      {children}
-    </CurrentUserContext.Provider>
-  );
+  return React.createElement(CurrentUserContext.Provider, {
+    value: {
+      isLoadingUser,
+      currentUser,
+      handleGetUser,
+      handleUpdateAvatar,
+      handleUpdateUser,
+    },
+    children,
+  });
 };
 
 export { CurrentUserProvider, useCurrentUserContext };

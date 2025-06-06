@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Header from "../components/Header/Header.jsx";
 import Footer from "./Footer/Footer.jsx";
 import Main from "./Main/Main.jsx";
-import { useCurrentUserContext } from "../contexts/CurrentUserContext";
+import { useCurrentUserContext } from "../contexts/CurrentUserContext.js";
 import api from "../utils/api.js";
 
 export default function App() {
@@ -54,10 +54,9 @@ export default function App() {
       setCards((prevCards) => [newCard, ...prevCards]);
       setPopup();
     } catch (error) {
-      console.error("Error al crear la tarjeta:", error)
+      console.error("Error al crear la tarjeta:", error);
     }
   }
-  
 
   function handleOpenPopup(popup) {
     setPopup(popup);
